@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:qlsvitsol</property>
+        <property name="hibernate.connection.username">GIAP</property>
+        <property name="hibernate.connection.password">123456</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.connection.release_mode">auto</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.connection.autoReconnect">true</property>
+        <!-- Automatically validates or exports schema DDL to the database when the SessionFactory is created -->
+        <!-- validate, create, update, create-drop -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+        <!--        <mapping class="model.Person" />-->
+        <mapping class="model.TicketBuyer"/>
+        <mapping class="model.Ticket"/>
+        <mapping class="model.Invoice"/>
+
+
+    </session-factory>
+
+</hibernate-configuration>
